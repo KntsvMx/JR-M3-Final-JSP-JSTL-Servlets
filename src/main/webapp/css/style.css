@@ -1,6 +1,15 @@
+:root {
+    --deep-space-blue: #0b3d91;
+    --astronaut-blue: #1f77b4;
+    --mars-red: #d62728;
+    --rocket-orange: #ff7f0e;
+    --alien-green: #2ca02c;
+    --text-color: #ffffff;
+}
+
 body {
-    background-color: #0b3d91; /* Deep Space Blue */
-    color: #ffffff; /* White */
+    background-color: var(--astronaut-blue);
+    color: var(--text-color);
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -9,55 +18,25 @@ body {
     margin: 0;
 }
 
-.header, .footer, .section {
+/* Общие стили для контейнеров */
+.container {
+    max-width: 800px;
+    background-color: var(--deep-space-blue);
+    padding: clamp(1rem, 2vw, 2rem);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: 100%;
+}
+
+/* Хедер и футер */
+.header, .footer {
     text-align: center;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background-color: #1f77b4; /* Astronaut Blue */
-}
-
-.header .container{
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
-.header {
-    padding-bottom: 0;
-}
-
-.footer .container {
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-
-.footer {
-    padding-top: 0;
-}
-
-.container {
-    max-width: 800px;
-    background-color: #0b3d91; /* Deep Space Blue */
-    padding: 2rem;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-    height: 100%;
-}
-
-.section {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 2rem;
-
-}
-
-.side-image {
-    width: 120px; /* Adjust the size as needed */
-    height: auto;
-    margin-left: 10px; /* Space between text and image */
-    align-self: center;
+    background-color: var(--astronaut-blue);
 }
 
 .footer p {
@@ -65,13 +44,34 @@ body {
     font-size: 0.875rem;
 }
 
-h1, h2, h3, p {
-    color: #ffffff; /* White */
+/* Основная секция */
+.section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 clamp(1rem, 2vw, 2rem);
+    margin: 0;
+    width: 100%;
+    background-color: var(--astronaut-blue); /* Вернули фон для всей секции */
+}
+/* Картинки */
+.side-image {
+    width: 120px;
+    height: auto;
+    margin-left: 10px;
+    align-self: center;
 }
 
+/* Стили заголовков и текста */
+h1, h2, h3, p {
+    color: var(--text-color);
+}
+
+/* Кнопки */
 button.btn-primary {
-    background-color: #d62728; /* Mars Red */
-    color: #ffffff; /* White */
+    background-color: var(--mars-red);
+    color: var(--text-color);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -80,13 +80,74 @@ button.btn-primary {
 }
 
 button.btn-primary:hover {
-    background-color: #ff7f0e; /* Rocket Orange */
+    background-color: var(--rocket-orange);
 }
 
+/* Ссылки */
 a {
-    color: #1f77b4; /* Astronaut Blue */
+    color: var(--astronaut-blue);
+    text-decoration: none;
 }
 
 a:hover {
-    color: #2ca02c; /* Alien Green */
+    color: var(--alien-green);
+}
+
+/* Секция регистрации */
+.register-section {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin: 0;
+}
+
+.register-section .container {
+    max-height: 400px;
+    padding: 0;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem;
+}
+
+.register-section h2 {
+    margin: 3rem 0 2rem 0;
+}
+
+.register-form input {
+    width: 60%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--astronaut-blue);
+    border-radius: 10px;
+}
+
+.register-form button {
+    width: 50%;
+    padding: 10px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--mars-red);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.register-form button:hover {
+    background-color: var(--rocket-orange);
+}
+
+.register-form a {
+    color: var(--astronaut-blue);
+}
+
+.register-form a:hover {
+    color: var(--alien-green);
 }
