@@ -4,7 +4,7 @@ public class Question {
     private String question;
     private boolean answer;
 
-    public Question(int id, String question, boolean answer) {
+    public Question(String question, boolean answer) {
         this.question = question;
         this.answer = answer;
     }
