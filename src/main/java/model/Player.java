@@ -1,7 +1,6 @@
 package model;
 
 public class Player {
-
     private String name;
     private Integer score;
     private String ip;
