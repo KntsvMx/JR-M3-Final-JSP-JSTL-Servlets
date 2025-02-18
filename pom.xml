@@ -8,35 +8,34 @@
     <name>JR-M3-Final-JSP-JSTL-Servlets Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
-        <!-- APIs' servlets -->
+        <!-- Servlet API -->
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.1</version>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>5.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- JSP API -->
+        <dependency>
+            <groupId>jakarta.servlet.jsp</groupId>
+            <artifactId>jakarta.servlet.jsp-api</artifactId>
+            <version>3.0.0</version>
             <scope>provided</scope>
         </dependency>
         <!-- JSTL -->
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.1.2</version>
+            <groupId>jakarta.servlet.jsp.jstl</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+            <version>2.0.0</version>
         </dependency>
-        <!-- JSP -->
-        <dependency>
-            <groupId>javax.servlet.jsp</groupId>
-            <artifactId>javax.servlet.jsp-api</artifactId>
-            <version>2.3.3</version>
-            <scope>provided</scope>
-        </dependency>
-        <!--   JUnit     -->
+        <!-- JUnit -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>5.11.0</version>
             <scope>test</scope>
         </dependency>
-
-        <!--   Log4J SLF4j     -->
+        <!-- Log4J SLF4j -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
@@ -52,7 +51,7 @@
             <artifactId>log4j-slf4j-impl</artifactId>
             <version>2.23.1</version>
         </dependency>
-        <!--   YAML data format    -->
+        <!-- YAML data format -->
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-yaml</artifactId>
