@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>Registration</title>
@@ -8,7 +9,7 @@
 <section class="register-section">
     <div class="container d-flex justify-content-center flex-column">
         <h2>Register your session</h2>
-        <form action="register" method="post" class="register-form">
+        <form method="post" class="register-form">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
