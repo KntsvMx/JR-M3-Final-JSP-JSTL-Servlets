@@ -37,6 +37,7 @@ public class RegisterServlet extends HttpServlet {
         SessionUtil.setMaxInactivityToSession(session, MAX_INACTIVITY_PERIOD);
 
         req.removeAttribute("errorMessage");
-        resp.sendRedirect(req.getContextPath() + "/start");
+        resp.setStatus(HttpServletResponse.SC_OK);
+        req.getRequestDispatcher("/start").forward(req, resp);
     }
 }

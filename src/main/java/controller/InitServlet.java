@@ -1,5 +1,6 @@
 package controller;
 
+import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,7 +16,7 @@ import static constants.SessionAttributes.PLAYER_ATTRIBUTE;
 public class InitServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         HttpSession session = req.getSession(false);
 
         if (session == null || (Player) session.getAttribute(PLAYER_ATTRIBUTE) == null) {
@@ -23,7 +24,7 @@ public class InitServlet extends HttpServlet {
             resp.getWriter().write("Session not created");
         } else {
             resp.setStatus(HttpServletResponse.SC_OK);
-            resp.sendRedirect(req.getContextPath() + "/game");
+            req.getRequestDispatcher("/game").forward(req, resp);
         }
     }
 }
