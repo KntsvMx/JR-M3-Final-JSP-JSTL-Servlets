@@ -14,7 +14,7 @@
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
             </div>
-            <button class="register-button" type="submit">Register</button>
+            <button class="register-button" id="registerNewPlayer" type="submit">Register</button>
         </form>
     </div>
 </section>

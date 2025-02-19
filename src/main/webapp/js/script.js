@@ -19,6 +19,24 @@ $(document).ready(function () {
             }
         });
     });
+    $('#register').click(function (event) {
+        event.preventDefault();
+        $.ajax({
+            url: '/register',
+            type: 'POST',
+            data: {
+                username: $('#username').val(),
+            },
+            success: function (response) {
+                window.location.href = response;
+            },
+            error: function (response) {
+                console.error('Error: ' + response.responseText);
+                alert('Failed to register');
+            }
+        })
+    });
+
     //
     // $('#logout').click(function () {
     //     logout();
@@ -26,9 +44,5 @@ $(document).ready(function () {
     //
     // $('#restart').click(function () {
     //     restart();
-    // });
-    //
-    // $('#register').click(function () {
-    //     register();
     // });
 });
