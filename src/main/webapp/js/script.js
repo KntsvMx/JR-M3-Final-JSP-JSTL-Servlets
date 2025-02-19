@@ -6,7 +6,9 @@ $(document).ready(function () {
             url: '/start',
             type: 'GET',
             success: function (response) {
-                window.location.href = response;
+                console.log('Success callback triggered');
+                console.log('Response:', response);
+                window.location.href = '/game.jsp';
             },
             error: function (response) {
                 if (response.status === 401) {
@@ -19,7 +21,7 @@ $(document).ready(function () {
             }
         });
     });
-    $('#register').click(function (event) {
+    $('#registerNewPlayer').click(function (event) {
         event.preventDefault();
         $.ajax({
             url: '/register',
@@ -28,7 +30,8 @@ $(document).ready(function () {
                 username: $('#username').val(),
             },
             success: function (response) {
-                window.location.href = response;
+                console.log('Success callback triggered');
+                window.location.href = '/start';
             },
             error: function (response) {
                 console.error('Error: ' + response.responseText);
@@ -45,4 +48,6 @@ $(document).ready(function () {
     // $('#restart').click(function () {
     //     restart();
     // });
+
+
 });
