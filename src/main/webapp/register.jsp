@@ -4,6 +4,7 @@
 <head>
     <title>Registration</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <section class="register-section">
@@ -18,5 +19,7 @@
         </form>
     </div>
 </section>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

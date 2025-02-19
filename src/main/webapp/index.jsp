@@ -38,7 +38,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <p>© 2021 Galactic Quest</p>
+                <p>© 2025 Galactic Quest</p>
             </div>
         </div>
     </div>
