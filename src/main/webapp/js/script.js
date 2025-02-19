@@ -5,15 +5,13 @@ $(document).ready(function () {
         $.ajax({
             url: '/start',
             type: 'GET',
-            success: function (response) {
+            success: function () {
                 console.log('Success callback triggered');
-                console.log('Response:', response);
-                window.location.href = '/game.jsp';
+                window.location.href = '/register.jsp';
             },
             error: function (response) {
                 if (response.status === 401) {
-                    alert('Please login to start the test');
-                    window.location.href = '/register.jsp';
+                    console.log('Redirecting to register page');
                 } else {
                     console.error('Error: ' + response.responseText);
                     alert('Failed to start the test');

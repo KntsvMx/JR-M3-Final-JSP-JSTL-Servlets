@@ -20,11 +20,9 @@ public class InitServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
 
         if (session == null || (Player) session.getAttribute(PLAYER_ATTRIBUTE) == null) {
-            resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            resp.getWriter().write("Session not created");
+            resp.sendRedirect("/register.jsp");
         } else {
-            resp.setStatus(HttpServletResponse.SC_OK);
-            req.getRequestDispatcher("/game").forward(req, resp);
+            resp.sendRedirect(req.getContextPath() + "/game.jsp");
         }
     }
 }
