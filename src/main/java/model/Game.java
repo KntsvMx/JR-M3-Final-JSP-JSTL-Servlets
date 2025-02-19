@@ -9,7 +9,7 @@ public class Game {
     private Player player;
     private int currentQuestionIndex;
 
-    public Game(ArrayList<Question> questions, Player player) {
+    public Game(Player player) {
         this.questions = QuestionUtil.initQuestions();
         this.player = player;
         this.currentQuestionIndex = 0;
