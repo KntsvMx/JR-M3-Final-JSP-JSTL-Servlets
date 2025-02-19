@@ -22,3 +22,17 @@
         </div>
     </div>
 </header>
+<section></section>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>© 2021 Galactic Quest</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
