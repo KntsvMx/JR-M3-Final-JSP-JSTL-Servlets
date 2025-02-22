@@ -11,7 +11,10 @@
 <section class="register-section">
     <div class="container d-flex justify-content-center flex-column">
         <h2>Register your session</h2>
-        <form method="post" class="register-form">
+        <c:if test="${errorMessage != null}">
+            <p class="error">${errorMessage}</p>
+        </c:if>
+        <form method="post" class="register-form" action="<c:url value="/register"/>">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>

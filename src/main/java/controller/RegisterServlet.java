@@ -38,6 +38,6 @@ public class RegisterServlet extends HttpServlet {
 
         req.removeAttribute("errorMessage");
         resp.setStatus(HttpServletResponse.SC_OK);
-        resp.sendRedirect(req.getContextPath() + "/index.jsp");  // Redirect to the main page
+        resp.sendRedirect(req.getContextPath() + "/start");
     }
 }

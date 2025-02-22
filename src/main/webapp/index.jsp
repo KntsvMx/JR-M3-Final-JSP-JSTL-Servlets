@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -15,7 +16,9 @@
                 <p>Embark on an interstellar adventure with Galactic Quest! Test your knowledge about the cosmos, from
                     planets and stars to black holes and galaxies. Each question will take you deeper into the mysteries
                     of the universe. Are you ready to become a space explorer?</p>
-                <button class="btn btn-primary">Start Test Quest</button>
+                <form method="get" action="<c:url value="/start"/>">
+                    <button type="submit" class="btn btn-primary">Start Test Quest</button>
+                </form>
             </div>
         </div>
     </div>
@@ -29,7 +32,7 @@
                 or a curious novice, Galactic Quest offers a fun and educational experience for all. Press "Start Test
                 Quest" to begin your adventure among the stars!</p>
         </div>
-        <img src="images/space_image.png" class="side-image">
+        <img src="images/space_image.png" class="side-image" alt="Space Image">
     </div>
 </section>
 <footer class="footer">
