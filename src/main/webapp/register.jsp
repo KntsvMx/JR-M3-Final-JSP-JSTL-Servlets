@@ -4,7 +4,8 @@
 <head>
     <title>Registration</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 <section class="register-section">
@@ -15,7 +16,7 @@
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
             </div>
-            <button class="register-button" id="registerNewPlayer" type="submit">Register</button>
+            <button class="register-button" type="submit">Register</button>
         </form>
     </div>
 </section>

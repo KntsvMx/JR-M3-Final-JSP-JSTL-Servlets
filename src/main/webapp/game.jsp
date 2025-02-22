@@ -1,12 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>Galactic Quest</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <%-- JQuery for Ajax --%>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <header class="header">
@@ -24,9 +23,7 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h2>Question</h2>
-                <p id="question">
-
-                </p>
+                <p>${question}}</p>
                 <div id="answer">
                     <button class="btn btn-success" id="trueButton">True</button>
                     <button class="btn btn-danger" id="falseButton">False</button>
