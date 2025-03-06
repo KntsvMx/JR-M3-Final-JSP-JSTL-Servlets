@@ -6,4 +6,5 @@ public class SessionAttributes {
     public static final int MAX_INACTIVITY_PERIOD = 30 * 60; // 30 minutes
     public static final String PLAYER_ATTRIBUTE = "player";
     public static final String GAME_ATTRIBUTE = "game";
+    public static final String QUESTION_ATTRIBUTE = "question";
 }
