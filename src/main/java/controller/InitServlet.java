@@ -16,11 +16,10 @@ public class InitServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         HttpSession session = req.getSession(false);
-
         if (session == null || session.getAttribute(PLAYER_ATTRIBUTE) == null) {
-            resp.sendRedirect(req.getContextPath() + "/register.jsp");
+            resp.sendRedirect(req.getContextPath() + "/register");
         } else {
-            resp.sendRedirect(req.getContextPath() + "/game.jsp");
+            resp.sendRedirect(req.getContextPath() + "/game");
         }
     }
 }
