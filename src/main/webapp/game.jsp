@@ -13,7 +13,13 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h1>Galactic Quest has started</h1>
-                <p>You have to choose the right answer. If you'll be wrong you're lost</p>
+                <p>Quest has started. You have a choice to finish at this step or logout. If you will choose one of the step you will have defeated</p>
+                <form action="<c:url value="/logout"/>" method="get">
+                    <button type="submit" class="btn btn-primary">Logout</button>
+                </form>
+                <form action="<c:url value="/finish"/>" method="get">
+                    <button type="submit" class="btn btn-primary">Finish</button>
+                </form>
             </div>
         </div>
     </div>
@@ -22,12 +28,18 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h2>Question</h2>
-                <p>${question}}</p>
-                <div id="answer">
-                    <button class="btn btn-success" id="trueButton">True</button>
-                    <button class="btn btn-danger" id="falseButton">False</button>
-                </div>
+                <form action="<c:url value="/question"/>" method="post">
+                    <h2>Question</h2>
+                    <p><%
+                        String question = (String) session.getAttribute("question");
+                        out.println(question);
+                    %></p>
+                    <div id="answer">
+                        <button class="btn btn-success" name="answer" value="true">True</button>
+                        <button class="btn btn-danger" name="answer" value="false">False</button>
+                    </div>
+                </form>
+                <div class="question-timer" id="timer"></div>
             </div>
         </div>
     </div>
