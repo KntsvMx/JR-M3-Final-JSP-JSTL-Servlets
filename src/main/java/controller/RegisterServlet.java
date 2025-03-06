@@ -13,11 +13,15 @@ import java.io.IOException;
 
 import static constants.GameConstants.DEFAULT_FIRST_QUESTION;
 import static constants.GameConstants.DEFAULT_SCORE;
-import static constants.SessionAttributes.MAX_INACTIVITY_PERIOD;
-import static constants.SessionAttributes.USER_NAME;
+import static constants.SessionAttributes.*;
 
 @WebServlet(name = "RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.sendRedirect(req.getContextPath() + "/register.jsp");
+    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
