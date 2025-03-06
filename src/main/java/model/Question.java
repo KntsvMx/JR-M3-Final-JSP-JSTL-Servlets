@@ -4,6 +4,10 @@ public class Question {
     private String question;
     private boolean answer;
 
+    public Question() {
+
+    }
+
     public Question(String question, boolean answer) {
         this.question = question;
         this.answer = answer;
@@ -17,8 +21,8 @@ public class Question {
         this.question = question;
     }
 
-    public boolean isAnswer() {
-        return answer;
+    public boolean isAnswer(boolean playerAnswer) {
+        return answer == playerAnswer;
     }
 
     public void setAnswer(boolean answer) {
