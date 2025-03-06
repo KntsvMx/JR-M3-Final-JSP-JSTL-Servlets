@@ -2,15 +2,17 @@ package model;
 
 public class Player {
     private String name;
-    private Integer score;
+    private int score;
     private String ip;
-    private String currentQuestion;
 
-    public Player(String name, Integer score, String ip, String currentQuestion) {
+    public Player() {
+
+    }
+
+    public Player(String name, int score, String ip, String currentQuestion) {
         this.name = name;
         this.score = score;
         this.ip = ip;
-        this.currentQuestion = currentQuestion;
     }
 
     public String getName() {
@@ -21,12 +23,16 @@ public class Player {
         this.name = name;
     }
 
-    public Integer getScore() {
+    public int getScore() {
         return score;
     }
 
-    public void setScore(Integer score) {
+    public void setScore(int score) {
         this.score = score;
+    }
+
+    public void increaseScore() {
+        this.score++;
     }
 
     public String getIp() {
@@ -35,13 +41,5 @@ public class Player {
 
     public void setIp(String ip) {
         this.ip = ip;
-    }
-
-    public String getCurrentQuestion() {
-        return currentQuestion;
-    }
-
-    public void setCurrentQuestion(String currentQuestion) {
-        this.currentQuestion = currentQuestion;
     }
 }
