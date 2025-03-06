@@ -24,15 +24,20 @@ public class Game {
         return currentQuestionIndex;
     }
 
-    public void setCurrentQuestionIndex(int currentQuestionIndex) {
-        this.currentQuestionIndex = currentQuestionIndex;
+    public void increaseCurrentQuestionIndex() {
+        if (currentQuestionIndex < questions.size()) {
+            currentQuestionIndex++;
+        }
+    }
+
+    public boolean checkAnswer(boolean answer) {
+        if (questions.get(currentQuestionIndex).isAnswer(answer)) {
+            player.increaseScore();
+        }
+        return answer;
     }
 
     public Player getPlayer() {
         return player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
     }
 }
