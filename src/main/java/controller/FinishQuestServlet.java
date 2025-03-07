@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import model.Game;
+import model.Player;
 import util.SessionUtil;
 
 import java.io.IOException;
@@ -27,7 +28,13 @@ public class FinishQuestServlet extends HttpServlet {
             return;
         }
 
-        SessionUtil.setPlayerToSession(session, game.getPlayer());
+        Player player = (Player) game.getPlayer();
+        if (player == null) {
+            resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Player not found in session");
+            return;
+        }
+
+        SessionUtil.setPlayerToSession(session, player);
 
         resp.sendRedirect(req.getContextPath() + "/statistic.jsp");
     }

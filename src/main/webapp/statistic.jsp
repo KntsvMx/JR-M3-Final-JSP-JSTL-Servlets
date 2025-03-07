@@ -1,3 +1,4 @@
+<%@ page import="model.Player" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
@@ -23,16 +24,29 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:if test="${not empty sessionScope.player}">
-                        <tr>
-                            <td>${sessionScope.player.name}</td>
-                            <td>${sessionScope.player.ip}</td>
-                            <td>${sessionScope.player.score}</td>
-                        </tr>
-                    </c:if>
+                    <%
+                        Player player = (Player) session.getAttribute("player");
+                        if (player != null) {
+                    %>
+                    <tr>
+                        <td><%= player.getName() %>
+                        </td>
+                        <td><%= player.getIp() %>
+                        </td>
+                        <td><%= player.getScore() %>
+                        </td>
+                    </tr>
+                    <%
+                        }
+                    %>
                     </tbody>
                 </table>
             </div>
+        </div>
+        <div class="button-container">
+            <form action="<c:url value="/logout"/>" method="get">
+                <button type="submit" class="btn btn-primary">Finish</button>
+            </form>
         </div>
     </div>
 </section>
