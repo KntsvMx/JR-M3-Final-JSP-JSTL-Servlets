@@ -20,8 +20,11 @@ public class Game {
         return questions;
     }
 
-    public int getCurrentQuestionIndex() {
-        return currentQuestionIndex;
+   public Question getCurrentQuestion() {
+        if (currentQuestionIndex < questions.size()) {
+            return questions.get(currentQuestionIndex);
+        }
+        return null;
     }
 
     public void increaseCurrentQuestionIndex() {
@@ -31,10 +34,11 @@ public class Game {
     }
 
     public boolean checkAnswer(boolean answer) {
-        if (questions.get(currentQuestionIndex).isAnswer(answer)) {
+        if (currentQuestionIndex < questions.size() && questions.get(currentQuestionIndex).isAnswer(answer)) {
             player.increaseScore();
+            return true;
         }
-        return answer;
+        return false;
     }
 
     public Player getPlayer() {
