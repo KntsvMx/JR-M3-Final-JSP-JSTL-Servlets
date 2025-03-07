@@ -83,6 +83,13 @@ button.btn-primary:hover {
     background-color: var(--rocket-orange);
 }
 
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+}
+
 /* Ссылки */
 a {
     color: var(--astronaut-blue);
@@ -121,6 +128,11 @@ a:hover {
     margin: 3rem 0 2rem 0;
 }
 
+.register-form label {
+    padding-right: 10px;
+    color: var(--text-color);
+}
+
 .register-form input {
     width: 60%;
     padding: 10px;
@@ -156,4 +168,47 @@ a:hover {
     color: var(--mars-red);
     font-size: 0.875rem;
     margin: 0;
+}
+
+/* Statistic section */
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+.table th {
+    background-color: var(--deep-space-blue);
+    color: var(--text-color);
+    text-align: center;
+}
+
+.table td {
+    text-align: center;
 }
