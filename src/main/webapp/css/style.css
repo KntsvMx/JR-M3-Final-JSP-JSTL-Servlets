@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: var(--astronaut-blue);
+    background-color: var(--astronaut-blue) !important;
     color: var(--text-color);
     font-family: Arial, sans-serif;
     display: flex;
