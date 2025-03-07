@@ -49,7 +49,7 @@ public class QuestionServlet extends HttpServlet {
             game.increaseCurrentQuestionIndex();
         } else {
             SessionUtil.setGameToSession(session, game);
-            returnToFailurePage(req, resp);
+            resp.sendRedirect(req.getContextPath() + "/failure");
             return;
         }
 
@@ -62,9 +62,5 @@ public class QuestionServlet extends HttpServlet {
             SessionUtil.setGameToSession(session, game);
             resp.sendRedirect(req.getContextPath() + "/question");
         }
-    }
-
-    private void returnToFailurePage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/failure").forward(req, resp);
     }
 }
