@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import model.Game;
+import model.Question;
 import util.SessionUtil;
 
 import java.io.IOException;
@@ -21,8 +22,8 @@ public class QuestionServlet extends HttpServlet {
         Game game = (Game) SessionUtil.getGameFromSession(session);
 
         if (game != null) {
-            String question = game.getQuestions().get(game.getCurrentQuestionIndex()).getQuestion();
-            session.setAttribute(QUESTION_ATTRIBUTE, question);
+            Question question = game.getCurrentQuestion();
+            session.setAttribute(QUESTION_ATTRIBUTE, question.getQuestion());
             req.getRequestDispatcher("/game.jsp").forward(req, resp);
         } else {
             resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Game not found in session");
@@ -44,25 +45,19 @@ public class QuestionServlet extends HttpServlet {
         }
 
         boolean answer = Boolean.parseBoolean(req.getParameter("answer"));
-        if (game.getCurrentQuestionIndex()-1 >= game.getQuestions().size()) {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid question index");
-            return;
-        }
-
         if (game.checkAnswer(answer)) {
             game.increaseCurrentQuestionIndex();
-            session.setAttribute(QUESTION_ATTRIBUTE, game.getQuestions().get(game.getCurrentQuestionIndex()).getQuestion());
+            Question nextQuestion = game.getCurrentQuestion();
+            if (nextQuestion != null) {
+                SessionUtil.setGameToSession(session, game);
+                resp.sendRedirect(req.getContextPath() + "/question");
+            } else {
+                SessionUtil.setGameToSession(session, game);
+                req.getRequestDispatcher("/finish").forward(req, resp);
+            }
         } else {
+            SessionUtil.setGameToSession(session, game);
             returnToFailurePage(req, resp);
-        }
-
-//      Set the updated game object to the session
-        SessionUtil.setGameToSession(session, game);
-
-        if (game.getCurrentQuestionIndex() < game.getQuestions().size()) {
-           req.getRequestDispatcher("/question").forward(req, resp);
-        } else {
-            req.getRequestDispatcher("/finish").forward(req, resp);
         }
     }
 

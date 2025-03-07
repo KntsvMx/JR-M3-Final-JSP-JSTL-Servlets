@@ -35,9 +35,4 @@ public class GameServlet extends HttpServlet {
             resp.sendRedirect(req.getContextPath() + "/question");
         }
     }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-    }
 }
