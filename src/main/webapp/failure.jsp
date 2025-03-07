@@ -16,7 +16,7 @@
                 <h1>Galactic Quest</h1>
                 <p>Oh no! You have failed the quest. Would you like to try again?</p>
                 <div class="button-container">
-                    <form method="get" action="<c:url value="/start"/>">
+                    <form method="get" action="<c:url value="/question"/>">
                         <button type="submit" class="btn btn-primary">Try Again</button>
                     </form>
                     <form method="get" action="<c:url  value="/logout"/>">
