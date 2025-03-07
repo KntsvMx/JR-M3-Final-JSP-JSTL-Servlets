@@ -27,6 +27,10 @@ public class Game {
         return null;
     }
 
+    public void setDefaultCurrentQuestionIndex() {
+        this.currentQuestionIndex = 0;
+    }
+
     public void increaseCurrentQuestionIndex() {
         if (currentQuestionIndex < questions.size()) {
             this.currentQuestionIndex++;
