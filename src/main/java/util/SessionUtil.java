@@ -38,4 +38,7 @@ public class SessionUtil {
     }
 
 
+    public static void removePlayerAttributeFromSession(HttpSession session) {
+        session.removeAttribute(PLAYER_ATTRIBUTE);
+    }
 }

@@ -27,6 +27,7 @@ public class GameServlet extends HttpServlet {
         if (game == null && player != null) {
             game = new Game(player);
             SessionUtil.setGameToSession(session, game);
+            SessionUtil.removePlayerAttributeFromSession(session);
             resp.sendRedirect(req.getContextPath() + "/question");
         } else if (player == null) {
             resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Player not found in session");

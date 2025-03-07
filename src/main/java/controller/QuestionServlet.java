@@ -44,17 +44,20 @@ public class QuestionServlet extends HttpServlet {
         }
 
         boolean answer = Boolean.parseBoolean(req.getParameter("answer"));
-        int currentQuestionIndex = game.getCurrentQuestionIndex();
-        if (currentQuestionIndex >= game.getQuestions().size()) {
+        if (game.getCurrentQuestionIndex()-1 >= game.getQuestions().size()) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid question index");
             return;
         }
 
         if (game.checkAnswer(answer)) {
             game.increaseCurrentQuestionIndex();
+            session.setAttribute(QUESTION_ATTRIBUTE, game.getQuestions().get(game.getCurrentQuestionIndex()).getQuestion());
         } else {
             returnToFailurePage(req, resp);
         }
+
+//      Set the updated game object to the session
+        SessionUtil.setGameToSession(session, game);
 
         if (game.getCurrentQuestionIndex() < game.getQuestions().size()) {
            req.getRequestDispatcher("/question").forward(req, resp);
