@@ -16,15 +16,17 @@
                 <p>Embark on an interstellar adventure with Galactic Quest! Test your knowledge about the cosmos, from
                     planets and stars to black holes and galaxies. Each question will take you deeper into the mysteries
                     of the universe. Are you ready to become a space explorer?</p>
-                <form method="get" action="<c:url value="/start"/>">
-                    <button type="submit" class="btn btn-primary">Start Test Quest</button>
-                </form>
-                <form method="get" action="<c:url  value="/logout"/>">
-                    <c:if test="${errorMessage != null}">
-                        <p class="error">${errorMessage}</p>
-                    </c:if>
-                    <button type="submit" class="btn btn-primary">Logout</button>
-                </form>
+                <div class="button-container">
+                    <form method="get" action="<c:url value='/start'/>">
+                        <button type="submit" class="btn btn-primary">Start Test Quest</button>
+                    </form>
+                    <form method="get" action="<c:url value='/logout'/>">
+                        <c:if test="${errorMessage != null}">
+                            <p class="error">${errorMessage}</p>
+                        </c:if>
+                        <button type="submit" class="btn btn-primary">Logout</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

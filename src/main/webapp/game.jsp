@@ -13,16 +13,18 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h1>Galactic Quest has started</h1>
-                <p>Quest has started. You have a choice to finish at this step or logout. If you will choose one of the step you will have defeated</p>
-                <form action="<c:url value="/logout"/>" method="get">
-                    <button type="submit" class="btn btn-primary">Logout</button>
-                </form>
-                <form action="<c:url value="/finish"/>" method="get">
-                    <button type="submit" class="btn btn-primary">Finish</button>
-                </form>
+                <p>Quest has started. You have a choice to finish at this step or logout. If you will choose one of the
+                    step you will have defeated</p>
+                <div class="button-container">
+                    <form action="<c:url value="/logout"/>" method="get">
+                        <button type="submit" class="btn btn-primary">Logout</button>
+                    </form>
+                    <form action="<c:url value="/finish"/>" method="get">
+                        <button type="submit" class="btn btn-primary">Finish</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 </header>
 <section class="section">
     <div class="container">
