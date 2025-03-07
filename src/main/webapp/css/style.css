@@ -1,14 +1,13 @@
 :root {
-    --deep-space-blue: #0b3d91;
-    --astronaut-blue: #1f77b4;
-    --mars-red: #d62728;
-    --rocket-orange: #ff7f0e;
-    --alien-green: #2ca02c;
-    --text-color: #ffffff;
+    --background-color: #1a1a1a;
+    --primary-color: #10a37f;
+    --secondary-color: #ffffff;
+    --accent-color: #f5f5f5;
+    --text-color: #d1d1d1;
 }
 
 body {
-    background-color: var(--astronaut-blue) !important;
+    background-color: var(--background-color) !important;
     color: var(--text-color);
     font-family: Arial, sans-serif;
     display: flex;
@@ -18,17 +17,17 @@ body {
     margin: 0;
 }
 
-/* Общие стили для контейнеров */
+/* Common container styles */
 .container {
     max-width: 800px;
-    background-color: var(--deep-space-blue);
+    background-color: var(--background-color);
     padding: clamp(1rem, 2vw, 2rem);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     width: 100%;
 }
 
-/* Хедер и футер */
+/* Header and footer */
 .header, .footer {
     text-align: center;
     width: 100%;
@@ -36,7 +35,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background-color: var(--astronaut-blue);
+    background-color: var(--background-color);
 }
 
 .footer p {
@@ -44,7 +43,7 @@ body {
     font-size: 0.875rem;
 }
 
-/* Основная секция */
+/* Main section */
 .section {
     flex: 1;
     display: flex;
@@ -53,9 +52,10 @@ body {
     padding: 0 clamp(1rem, 2vw, 2rem);
     margin: 0;
     width: 100%;
-    background-color: var(--astronaut-blue); /* Вернули фон для всей секции */
+    background-color: var(--background-color);
 }
-/* Картинки */
+
+/* Images */
 .side-image {
     width: 120px;
     height: auto;
@@ -63,15 +63,15 @@ body {
     align-self: center;
 }
 
-/* Стили заголовков и текста */
+/* Headings and text */
 h1, h2, h3, p {
     color: var(--text-color);
 }
 
-/* Кнопки */
+/* Buttons */
 button.btn-primary {
-    background-color: var(--mars-red);
-    color: var(--text-color);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -80,7 +80,8 @@ button.btn-primary {
 }
 
 button.btn-primary:hover {
-    background-color: var(--rocket-orange);
+    background-color: var(--accent-color);
+    color: var(--background-color);
 }
 
 .button-container {
@@ -90,17 +91,17 @@ button.btn-primary:hover {
     gap: 15px;
 }
 
-/* Ссылки */
+/* Links */
 a {
-    color: var(--astronaut-blue);
+    color: var(--primary-color);
     text-decoration: none;
 }
 
 a:hover {
-    color: var(--alien-green);
+    color: var(--accent-color);
 }
 
-/* Секция регистрации */
+/* Registration section */
 .register-section {
     text-align: center;
     width: 100%;
@@ -137,7 +138,7 @@ a:hover {
     width: 60%;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid var(--astronaut-blue);
+    border: 1px solid var(--background-color);
     border-radius: 10px;
 }
 
@@ -147,25 +148,26 @@ a:hover {
     margin: 15px 0;
     border: none;
     border-radius: 8px;
-    background-color: var(--mars-red);
-    color: var(--text-color);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     cursor: pointer;
 }
 
 .register-form button:hover {
-    background-color: var(--rocket-orange);
+    background-color: var(--accent-color);
+    color: var(--background-color);
 }
 
 .register-form a {
-    color: var(--astronaut-blue);
+    color: var(--primary-color);
 }
 
 .register-form a:hover {
-    color: var(--alien-green);
+    color: var(--accent-color);
 }
 
 .error {
-    color: var(--mars-red);
+    color: var(--primary-color);
     font-size: 0.875rem;
     margin: 0;
 }
@@ -204,7 +206,7 @@ a:hover {
 }
 
 .table th {
-    background-color: var(--deep-space-blue);
+    background-color: var(--background-color);
     color: var(--text-color);
     text-align: center;
 }
