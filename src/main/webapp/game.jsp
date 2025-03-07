@@ -25,6 +25,7 @@
                 </div>
             </div>
         </div>
+    </div>
 </header>
 <section class="section">
     <div class="container">
