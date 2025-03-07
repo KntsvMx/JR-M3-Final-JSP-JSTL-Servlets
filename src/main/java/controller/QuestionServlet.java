@@ -65,6 +65,6 @@ public class QuestionServlet extends HttpServlet {
     }
 
     private void returnToFailurePage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/failure.jsp").forward(req, resp);
+        req.getRequestDispatcher("/failure").forward(req, resp);
     }
 }
