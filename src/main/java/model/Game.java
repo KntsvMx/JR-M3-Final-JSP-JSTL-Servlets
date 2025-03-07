@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Game {
     private final ArrayList<Question> questions;
-    private Player player;
+    private final Player player;
     private int currentQuestionIndex;
 
     public Game(Player player) {
@@ -26,7 +26,7 @@ public class Game {
 
     public void increaseCurrentQuestionIndex() {
         if (currentQuestionIndex < questions.size()) {
-            currentQuestionIndex++;
+            this.currentQuestionIndex++;
         }
     }
 
