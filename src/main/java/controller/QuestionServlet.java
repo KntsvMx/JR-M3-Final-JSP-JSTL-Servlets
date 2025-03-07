@@ -48,6 +48,7 @@ public class QuestionServlet extends HttpServlet {
         if (game.checkAnswer(answer)) {
             game.increaseCurrentQuestionIndex();
         } else {
+            game.setDefaultCurrentQuestionIndex();
             SessionUtil.setGameToSession(session, game);
             resp.sendRedirect(req.getContextPath() + "/failure");
             return;

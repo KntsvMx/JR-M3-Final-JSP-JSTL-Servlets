@@ -14,6 +14,4 @@ public class FailureServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("/failure.jsp").forward(req, resp);
     }
-
-
 }
