@@ -33,6 +33,10 @@ public class Game {
         }
     }
 
+    public boolean isGameFinished() {
+        return currentQuestionIndex >= questions.size();
+    }
+
     public boolean checkAnswer(boolean answer) {
         if (currentQuestionIndex < questions.size() && questions.get(currentQuestionIndex).isAnswer(answer)) {
             player.increaseScore();

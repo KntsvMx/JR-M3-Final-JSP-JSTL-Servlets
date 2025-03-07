@@ -47,20 +47,22 @@ public class QuestionServlet extends HttpServlet {
         boolean answer = Boolean.parseBoolean(req.getParameter("answer"));
         if (game.checkAnswer(answer)) {
             game.increaseCurrentQuestionIndex();
-            Question nextQuestion = game.getCurrentQuestion();
-            if (nextQuestion != null) {
-                SessionUtil.setGameToSession(session, game);
-                resp.sendRedirect(req.getContextPath() + "/question");
-            } else {
-                SessionUtil.setGameToSession(session, game);
-                req.getRequestDispatcher("/finish").forward(req, resp);
-            }
         } else {
             SessionUtil.setGameToSession(session, game);
             returnToFailurePage(req, resp);
+            return;
+        }
+
+        if (game.isGameFinished()) {
+            SessionUtil.setGameToSession(session, game);
+            resp.sendRedirect(req.getContextPath() + "/finish");
+        } else {
+            Question nextQuestion = game.getCurrentQuestion();
+            session.setAttribute(QUESTION_ATTRIBUTE, nextQuestion.getQuestion());
+            SessionUtil.setGameToSession(session, game);
+            resp.sendRedirect(req.getContextPath() + "/question");
         }
     }
-
 
     private void returnToFailurePage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("/failure.jsp").forward(req, resp);
