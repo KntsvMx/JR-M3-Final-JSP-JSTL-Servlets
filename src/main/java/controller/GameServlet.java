@@ -39,7 +39,7 @@ public class GameServlet extends HttpServlet {
             logger.info("Game created successfully, redirecting to /question");
             resp.sendRedirect(req.getContextPath() + "/question");
         } else if (player == null) {
-            logger.warn("Player is null, redirecting to /register");
+            logger.error("Player is null during game creation");
             resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Player not found in session");
         } else {
             logger.info("Game already exists, redirecting to /question");

@@ -35,7 +35,7 @@ public class RegisterServlet extends HttpServlet {
         String playerName = req.getParameter(USER_NAME);
 
         if (playerName == null || playerName.isEmpty()) {
-            logger.warn("Player name is required to register proceed to redirect to /register.jsp");
+            logger.warn("Player name is required to register, redirecting to /register.jsp");
             req.setAttribute("errorMessage", "Player name is required");
             req.getRequestDispatcher("/register.jsp").forward(req, resp);
             return;
