@@ -11,52 +11,50 @@ import static org.junit.jupiter.api.Assertions.*;
 class GameTest {
 
     private Game game;
+    private static final String FIRST_QUESTION = "The Sun is planet";
+    private static final String SECOND_QUESTION = "The Earth is planet";
 
     @BeforeEach
     public void setUp() {
-        Player player = new Player("John", 0, "127.0.0.1", "The Sun if planet");
+        Player player = new Player("John", 0, "127.0.0.1", FIRST_QUESTION);
         game = new Game(player);
     }
 
     @Test
-    void getQuestions() {
+    void testGetQuestions() {
         ArrayList<Question> questions = game.getQuestions();
         assertNotNull(questions);
     }
 
     @Test
-    void getCurrentQuestion() {
-        String expectedQuestion = "The Sun is planet";
+    void testGetCurrentQuestion() {
         Question question = game.getCurrentQuestion();
-        assertEquals(expectedQuestion, question.getQuestion());
+        assertEquals(FIRST_QUESTION, question.getQuestion());
     }
 
     @Test
-    void setDefaultCurrentQuestionIndex() {
+    void testSetDefaultCurrentQuestionIndex() {
         game.setDefaultCurrentQuestionIndex();
-        String question = game.getCurrentQuestion().getQuestion();
-        String expectedQuestion = "The Sun is planet";
-        assertEquals(expectedQuestion, question);
+        Question question = game.getCurrentQuestion();
+        assertEquals(FIRST_QUESTION, question.getQuestion());
     }
 
     @Test
-    void increaseCurrentQuestionIndex() {
+    void testIncreaseCurrentQuestionIndex() {
         game.setDefaultCurrentQuestionIndex();
         game.increaseCurrentQuestionIndex();
-        String increasedExpectedIndexQuestion = "The Earth is planet";
-        Question  increasedIndexQuestion = game.getCurrentQuestion();
-        assertEquals(increasedExpectedIndexQuestion, increasedIndexQuestion.getQuestion());
+        Question question = game.getCurrentQuestion();
+        assertEquals(SECOND_QUESTION, question.getQuestion());
     }
 
     @Test
-    void isGameFinishedFalse() {
+    void testIsGameFinishedFalse() {
         boolean isGameFinished = game.isGameFinished();
         assertFalse(isGameFinished);
     }
 
     @Test
-    @Disabled
-    void isGameFinishedTrue() {
+    void testIsGameFinishedTrue() {
         game.setDefaultCurrentQuestionIndex();
         for (int i = 0; i < game.getQuestions().size(); i++) {
             game.increaseCurrentQuestionIndex();
@@ -66,14 +64,14 @@ class GameTest {
     }
 
     @Test
-    void checkAnswerIfExpectedAnswerOfQuestionIsFalse() {
+    void testCheckAnswerIfExpectedAnswerOfQuestionIsFalse() {
         game.setDefaultCurrentQuestionIndex();
         boolean isAnswerCorrect = game.checkAnswer(false);
         assertTrue(isAnswerCorrect);
     }
 
     @Test
-    void checkAnswerIfExpectedAnswerOfQuestionIsTrue() {
+    void testCheckAnswerIfExpectedAnswerOfQuestionIsTrue() {
         game.setDefaultCurrentQuestionIndex();
         game.increaseCurrentQuestionIndex();
         boolean isAnswerCorrect = game.checkAnswer(true);
@@ -81,14 +79,14 @@ class GameTest {
     }
 
     @Test
-    void checkAnswerIfExpectedAnswerOfQuestionIsWrong() {
+    void testCheckAnswerIfExpectedAnswerOfQuestionIsWrong() {
         game.setDefaultCurrentQuestionIndex();
         boolean isAnswerCorrect = game.checkAnswer(true);
         assertFalse(isAnswerCorrect);
     }
 
     @Test
-    void getPlayer() {
+    void testGetPlayer() {
         Player player = game.getPlayer();
         assertNotNull(player);
     }
