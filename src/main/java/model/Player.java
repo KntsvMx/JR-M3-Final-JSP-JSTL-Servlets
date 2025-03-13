@@ -8,7 +8,7 @@ public class Player {
     public Player() {
 
     }
-
+// TODO: delete currentQuestion from the constructor
     public Player(String name, int score, String ip, String currentQuestion) {
         this.name = name;
         this.score = score;
