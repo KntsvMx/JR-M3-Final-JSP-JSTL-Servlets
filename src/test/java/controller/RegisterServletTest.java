@@ -37,12 +37,7 @@ class RegisterServletTest {
 
     @InjectMocks
     private RegisterServlet registerServlet;
-
-//    @BeforeEach
-//    public void setUp() {
-//        when(request.getContextPath()).thenReturn("");
-//    }
-
+    
     @Test
     public void testDoGetRedirectToRegisterJSP() throws ServletException, IOException {
         registerServlet.doGet(request, response);
