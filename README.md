@@ -7,24 +7,27 @@ This project is a web-based text adventure game implemented using the following 
 - **JSTL (JavaServer Pages Standard Tag Library)** for simplifying view logic.
 - **Log4j with SLF4J** for logging.
 - **JUnit** for testing servlets and ensuring logic reliability.
+- **Mockito** for mocking dependencies in unit tests.
+- **Maven** for project management and dependency resolution.
+- **Tomcat 10** for running the web application.
 
 ## Features
 
 1. **Dynamic Gameplay**:
     - The game progresses based on user choices.
-    - Questions adapt depending on the player’s previous answers.
+    - Predefined scenarios and outcomes are determined by player decisions.
 
 2. **Welcome Page**:
     - A welcoming page introduces players to the game’s backstory and sets the mood.
 
 3. **Session Management**:
-    - Stores player information (e.g., name, number of games played) using HTTP sessions.
+    - Stores player information (e.g., name, ip, game score etc) using HTTP sessions.
 
 4. **Game State**:
-    - Tracks win/loss status, allowing players to restart the game after finishing.
+    - Tracks win/loss status, allowing players to restart the game after finishing or failure.
 
 5. **Compatibility**:
-    - Designed for testing on **Tomcat 9**.
+    - Designed for testing on **Tomcat 10**.
 
 ## Setup Instructions
 
@@ -52,18 +55,17 @@ This project is a web-based text adventure game implemented using the following 
       ```bash
       mvn test
       ```
+- **Mockito**:
+    - Mocking is used to isolate dependencies and ensure that tests are reliable.
+    - Run the tests with:
+      ```bash
+      mvn test
+      ```
 
 ## Logging
 
 - Logging is configured using **Log4j with SLF4J** for clean and manageable log output.
 - Log files record key events such as player actions, session state changes, and errors.
-
-## Roadmap
-
-- Complete the implementation of the game logic and JSP pages.
-- Enhance test coverage for edge cases.
-- Add CSS for improved user interface design.
-- Explore potential integration with a database for persistent player stats.
 
 ---
 
